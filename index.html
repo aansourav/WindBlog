@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Wind Blog</title>
     <link rel="stylesheet" href="./src/css/style.css" />
     <link
       rel="stylesheet"
@@ -23,13 +23,13 @@
   <body class="font-poppins text-gray-600">
     <nav class="bg-white shadow-sm">
       <div class="container mx-auto px-4 py-5 flex items-center">
-        <div class="w-40">
+        <div class="w-40 flex-shrink-0">
           <a href="index.html">
             <img src="./src/images/logo.png" alt="logo" class="w-full" />
           </a>
         </div>
 
-        <div class="ml-12 flex">
+        <div class="ml-12 hidden lg:flex">
           <a href="#" class="px-3 flex items-center font-semibold text-sm hover:text-blue-500 transition">
             <span class="mr-"> <i class="fas fa-home"></i> Home </span>
           </a>
@@ -41,7 +41,7 @@
           </a>
         </div>
 
-        <div class="relative ml-auto">
+        <div class="relative ml-auto hidden lg:block">
           <span class="absolute left-3 top-2 text-sm text-gray-500">
             <i class="fa-solid fa-magnifying-glass"></i>
           </span>
@@ -51,7 +51,8 @@
             placeholder="Search"
           />
         </div>
-        <div class="ml-5">
+
+        <div class="lg:ml-5 ml-auto">
           <a href="#" class="flex items-center text-sm font-semibold hover:text-blue-500 transition">
             <span class="mr-2">
               <i class="fa-solid fa-user"></i>
@@ -59,13 +60,19 @@
             Login/Register
           </a>
         </div>
+        <div
+          class="ml-4 block lg:hidden text-xl text-gray-700 cursor-pointer hover:text-blue-500 transition"
+          id="open-sidebar"
+        >
+          <i class="fa-solid fa-bars"></i>
+        </div>
       </div>
     </nav>
 
     <main class="py-12 bg-gray-100 min-h-screen">
-      <div class="container mx-auto px-4 flex">
+      <div class="container mx-auto lg:px-4 flex flex-wrap lg:flex-nowrap">
         <!-- ---------------SIDEBAR------------- -->
-        <div class="w-3/12">
+        <div class="w-3/12 hidden lg:block">
           <div class="bg-white shadow-sm rounded-sm p-4">
             <h3 class="text-xl font-semibold text-gray-700 font-roboto mb-4">Categories</h3>
             <div class="text-gray-700 space-y-3 font-semibold leading-4 uppercase text-sm">
@@ -265,7 +272,7 @@
 
         <!-- ------------- Middle Section ------------- -->
 
-        <div class="w-6/12 mx-6">
+        <div class="lg:w-6/12 lg:mx-6 w-full">
           <div class="flex justify-between bg-white px-3 py-2 items-center rounded-sm mb-4">
             <h5 class="text-base uppercase font-semibold font-roboto">Business</h5>
             <a
@@ -277,7 +284,7 @@
           </div>
 
           <div class="rounded-sm overflow-hidden bg-white shadow-sm">
-            <a href="view.html" class="block rounded-md overflow-hidden">
+            <a href="./postView.html" class="block rounded-md overflow-hidden">
               <img
                 src="src/images/img-12.jpg"
                 class="w-full h-96 object-cover transform hover:scale-110 transition duration-500"
@@ -446,11 +453,13 @@
         <!-- ------------- Middle Section ------------- -->
 
         <!-- right sidebar -->
-        <div class="lg:w-3/12 w-full mt-8 lg:mt-0">
+        <div class="lg:w-3/12 mt-8 lg:mt-0 w-full">
           <!-- Social plugin -->
           <div class="w-full bg-white shadow-sm rounded-sm p-4">
-            <h3 class="text-xl font-semibold text-gray-700 mb-3 font-roboto">Social Plugin</h3>
-            <div class="flex gap-2">
+            <h3 class="text-xl font-semibold text-gray-700 mb-3 font-roboto text-center lg:text-left">
+              Social Plugin
+            </h3>
+            <div class="flex gap-2 justify-center lg:justify-start">
               <a
                 href="#"
                 class="w-8 h-8 rounded-sm flex items-center justify-center border border-gray-400 text-base text-gray-800 hover:text-blue-500"
@@ -602,8 +611,137 @@
     <!-- footer -->
     <footer class="border-t py-4">
       <p class="text-sm text-center">
-        Copyright © 2024 <span class="font-semibold">Abdullah An-Noor <span class="text-blue-500">|</span></span> All Rights Reserved
+        Copyright © 2024
+        <span class="font-semibold">Abdullah An-Noor <span class="text-blue-500">|</span></span> All Rights
+        Reserved
       </p>
     </footer>
+
+    <!-- ----------- SIDEBAR MENU ----------- -->
+    <div
+      class="fixed w-full h-full bg-black left-0 top-0 z-10 bg-opacity-25 lg:hidden opacity-0 invisible transition-all duration-500"
+      id="sidebar-wrapper"
+    >
+      <div class="fixed top-0 w-72 mb-2 h-full bg-white shadow-md z-10 flex flex-col p-4">
+        <div class="relative">
+          <span class="absolute left-3 top-2 text-sm text-gray-500">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </span>
+          <input
+            type="text"
+            class="block w-full border-none rounded-3xl pl-11 pr-2 py-2 focus:outline-none bg-gray-200 text-sm text-gray-700 shadow-sm"
+            placeholder="Search"
+          />
+        </div>
+
+        <h3 class="text-xl font-semibold text-gray-700 font-roboto mb-2 px-4 pt-4">Menu</h3>
+        <div class="flex flex-col space-y-2 mb-3 px-4">
+          <a
+            href="#"
+            class="flex items-center font-semibold text-sm hover:text-blue-500 transition"
+          >
+            <span class=""> <i class="mr-2 fas fa-home"></i> Home </span>
+          </a>
+          <a href="#" class="flex items-center font-semibold text-sm hover:text-blue-500 transition">
+            <span class=""> <i class="mr-2 fa-solid fa-address-card"></i> About </span>
+          </a>
+          <a href="#" class="flex items-center font-semibold text-sm hover:text-blue-500 transition">
+            <span class=""> <i class="mr-2 fa-solid fa-phone"></i> Contact </span>
+          </a>
+        </div>
+
+        <div class="bg-white shadow-sm rounded-sm mt-4 px-4">
+          <h3 class="text-xl font-semibold text-gray-700 font-roboto mb-4">Categories</h3>
+          <div class="text-gray-700 space-y-3 font-semibold leading-4 uppercase text-sm">
+            <a href="#" class="flex items-center hover:text-blue-500 transition">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Beauty</span>
+              <span class="font-normal ml-auto">(12)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Business</span>
+              <span class="font-normal ml-auto">(10)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Fashion</span>
+              <span class="font-normal ml-auto">(8)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Food</span>
+              <span class="font-normal ml-auto">(3)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Learn</span>
+              <span class="font-normal ml-auto">(17)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Music</span>
+              <span class="font-normal ml-auto">(2)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Nature</span>
+              <span class="font-normal ml-auto">(0)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>People</span>
+              <span class="font-normal ml-auto">(4)</span>
+            </a>
+
+            <a href="#" class="flex items-center hover:text-blue-500">
+              <span class="mr-2">
+                <i class="fa-solid fa-folder-open"></i>
+              </span>
+              <span>Technology</span>
+              <span class="font-normal ml-auto">(19)</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ----------- SIDEBAR MENU ----------- -->
+
+    <script>
+      document.getElementById("open-sidebar").addEventListener("click", function () {
+        document.getElementById("sidebar-wrapper").classList.remove("opacity-0");
+        document.getElementById("sidebar-wrapper").classList.remove("invisible");
+      });
+
+      document.body.addEventListener("click", function (e) {
+        if (e.target.id === "sidebar-wrapper") {
+          document.getElementById("sidebar-wrapper").classList.add("opacity-0");
+          document.getElementById("sidebar-wrapper").classList.add("invisible");
+        }
+      });
+    </script>
   </body>
 </html>

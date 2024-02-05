@@ -1,10 +1,11 @@
 {
-  "name": "tailblog",
+  "name": "windblog",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "vite --open"
+    "dev": "vite --open",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
